@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "0e8bd172-08a1-4b15-8b0a-fbb6ff0d8228",
+		"name": "WaterDigitBuddy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/authentication/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\" : {\n\t\t\"firstname\" : \"framboos\" ,\n\t    \"lastname\" : \"Croustillante\",\n\t    \"email\" : \"framboos4@gmail.com\",\n\t    \"password\" : \"azerty\",\n\t    \"age\" : \"1554996538165\",\n\t    \"gender\": \"Femme\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/authentication/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"authentication",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/current",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZyYW1ib29zNEBnbWFpbC5jb20iLCJ1c2VySWQiOiI1Y2FmNjA3MDBkODkxMzVhMzgzMmE0ODkiLCJpYXQiOjE1NTQ5OTczNjAsImV4cCI6MTU1NTAwMDk2MH0.nSm1t2vfmgcbkB26k2vHXr36S_pzjzrb267xsojGCIQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/users/current",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"current"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/authentication/sign",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\" : {\n\t    \"email\" : \"pimousse@gmail.com\",\n\t    \"password\" : \"azerty\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/authentication/sign",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"authentication",
+						"sign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "x-access-token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZyYW1ib29zNEBnbWFpbC5jb20iLCJ1c2VySWQiOiI1Y2FmNjA3MDBkODkxMzVhMzgzMmE0ODkiLCJpYXQiOjE1NTUwMTM2MjgsImV4cCI6MTU1NTAxNzIyOH0.lWMRw2LkIWcZz0Iwdw4QFVmI9tlI1HAVLuf09vVwuPc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/performances",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbW91c3NlQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVjYWY1ZGI5ODIwNzA3NWEwNDA5YTlmNiIsImlhdCI6MTU1NTAxMzg2NiwiZXhwIjoxNTU1MDE3NDY2fQ.611Hkxhkpnfh0IzDYJCr58AfKEAbftpDQnuMnjXb72s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/performances",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"performances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/performances",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZyYW1ib29zNEBnbWFpbC5jb20iLCJ1c2VySWQiOiI1Y2FmNjA3MDBkODkxMzVhMzgzMmE0ODkiLCJpYXQiOjE1NTUwMDE5NDUsImV4cCI6MTU1NTAwNTU0NX0.N0LfIKG6F6NbJHGylTPKtE5vjwPCBHZUmW4DqqBfmw4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"performance\" : {\n\t\t\"datePerformance\" : \"1555000960\",\n        \"speed\" : 76,\n        \"lengthType\" : 25,\n        \"startTime\" : \"1555000960\",\n        \"endTime\" : \"1555000960\",\n        \"distance\" : 200,\n        \"lostWeight\" : 47,\n        \"programType\" : {\n        \t\"_id\": \"5caf7280b089505b26a72e39\"\n        },\n        \"user\" : \"5caf60700d89135a3832a489\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/performances",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"performances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/programs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZyYW1ib29zNEBnbWFpbC5jb20iLCJ1c2VySWQiOiI1Y2FmNjA3MDBkODkxMzVhMzgzMmE0ODkiLCJpYXQiOjE1NTUwMDE5NDUsImV4cCI6MTU1NTAwNTU0NX0.N0LfIKG6F6NbJHGylTPKtE5vjwPCBHZUmW4DqqBfmw4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"program\" : {\n\t\t\"name\" : \"SpringBody\",\n        \"description\" : \"programme intermédiaire\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/programs",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"programs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
