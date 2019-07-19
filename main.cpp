@@ -59,7 +59,7 @@ void drawFractal(double cReal, double cImaginary) {
     fractal.SetSize(width, height);
     fractal.SetBitDepth(24);
 
-//#pragma omp parallel for private(y, x)
+#pragma omp parallel for private(y, x, i, newReal, newImaginary, oldReal, oldImaginary)
     //Loop through each pixel
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
