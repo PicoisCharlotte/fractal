@@ -29,6 +29,8 @@ double fractalEnd;
 
 RGBApixel rgbaPixel;
 
+int threads;
+
 BMP fractal;
 
 void drawFractal(double cReal, double cImaginary);
@@ -54,6 +56,9 @@ int main() {
 
 
 void drawFractal(double cReal, double cImaginary) {
+    omp_set_dynamic(0);
+    omp_set_num_threads(4);
+
     fractalStart = omp_get_wtime();
 
     fractal.SetSize(width, height);
@@ -66,7 +71,7 @@ void drawFractal(double cReal, double cImaginary) {
             //Initial real and Imaginary part of z, based on pixel location, zoom and position values
             newReal = 1.5 * (x - width / 2) / (0.5 * zoom * width) + moveX;
             newImaginary = (y - height / 2) / (0.5 * zoom * height) + moveY;
-//#pragma omp parallel for private (i)
+
             for(i = 0; i < maximalIteration; ++i) {
                 //Keep previous values of iteration
                 oldReal = newReal;
@@ -81,6 +86,7 @@ void drawFractal(double cReal, double cImaginary) {
                 if((newReal * newReal + newImaginary * newImaginary) > 2) {
                     break;
                 }
+                threads = omp_get_num_threads();
             }
 
             //Set color on RGBA pixel, make brightness black if maximalIteration is reached
@@ -97,6 +103,8 @@ void drawFractal(double cReal, double cImaginary) {
     fractal.WriteToFile("fractal.bmp");
 
     fractalEnd = omp_get_wtime();
+
+    cout << "\nNb thread : " << threads << "\n";
 
     cout << "\nFractal process has been processed in \n" << (fractalEnd - fractalStart) * 1000 << " milliseconds\n" << endl;
 }
